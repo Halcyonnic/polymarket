@@ -1,0 +1,14 @@
+[project]
+name = "polymarket"
+version = "0.1.0"
+description = "Polymarket analysis project"
+requires-python = ">=3.8"
+dependencies = [
+    "polars>=0.20.0",
+    "pandas>=2.0.0",
+    "ipykernel>=6.25.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
