@@ -8,10 +8,10 @@ Polymarket is a prediction market platform where users can trade on the outcome 
 
 ## Installation
 
-Install dependencies using pip:
+Install dependencies using uv:
 
 ```bash
-pip install -e .
+uv sync
 ```
 
 ## Dependencies

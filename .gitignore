@@ -13,7 +13,6 @@ env/
 .ipynb_checkpoints/
 
 # IDEs
-.vscode/
 .idea/
 
 # OS
