@@ -8,7 +8,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 
 from polymarket_orderbook import OrderbookClient, TradeMonitor, TradeManager, SportsMarketFilter
-import polars as pl
 
 
 def test_orderbook_client():
@@ -28,7 +27,7 @@ def test_orderbook_client():
         
         if len(markets_df) > 0:
             print(f"   Columns: {markets_df.columns}")
-            print(f"   First market preview:")
+            print("   First market preview:")
             print(markets_df.head(1))
             
             # Extract a token ID for further testing
@@ -50,12 +49,12 @@ def test_orderbook_client():
                 
                 # Test orderbook
                 orderbook = client.get_orderbook(token_id)
-                print(f"✅ Orderbook fetched")
+                print("✅ Orderbook fetched")
                 print(f"   Bids: {len(orderbook.get('bids', []))}, Asks: {len(orderbook.get('asks', []))}")
                 
                 # Test spread
                 spread = client.get_spread(token_id)
-                print(f"✅ Spread calculated")
+                print("✅ Spread calculated")
                 print(f"   Best Bid: {spread['best_bid']:.4f}, Best Ask: {spread['best_ask']:.4f}")
                 print(f"   Spread: {spread['spread']:.4f} ({spread['spread_pct']:.2f}%)")
                 
@@ -67,7 +66,7 @@ def test_orderbook_client():
                 
                 # Test market depth
                 depth = client.get_market_depth(token_id)
-                print(f"✅ Market depth calculated")
+                print("✅ Market depth calculated")
                 print(f"   Total Volume: {depth['total_volume']:.2f}")
                 print(f"   Imbalance: {depth['imbalance']:.2%}")
             else:
@@ -237,12 +236,12 @@ def test_trade_manager():
         
         # Get P&L history
         pnl_df = manager.get_pnl_dataframe()
-        print(f"\n📊 P&L History:")
+        print("\n📊 P&L History:")
         print(pnl_df)
         
         # Get portfolio summary
         summary = manager.get_portfolio_summary()
-        print(f"\n📊 Portfolio Summary:")
+        print("\n📊 Portfolio Summary:")
         for key, value in summary.items():
             if isinstance(value, float):
                 print(f"   {key}: {value:.2f}")

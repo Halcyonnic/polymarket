@@ -18,3 +18,7 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Dependency directories
+polymarket.egg-info/
+uv.lock

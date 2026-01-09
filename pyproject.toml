@@ -18,6 +18,23 @@ dependencies = [
     "requests>=2.32.5",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.8.0",
+    "pytest>=9.0.0",
+]
+
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["polymarket_orderbook*", "polymarketAPI*"]
+
+[tool.ruff]
+include = ["**/*.py", "**/*.ipynb"]
+
+[tool.uv.workspace]
+members = [
+    "polymarket_orderbook",
+]

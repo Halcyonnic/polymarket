@@ -21,7 +21,7 @@
 ### 3. Type Safety
 
 - Use type hints throughout the codebase
-- Make sure there is no ruff or mypy errors
+- Make sure there is no ruff error by running through `ruff check --fix .`
 - Avoid using `Any` type unless absolutely necessary
 - Use TypedDict or dataclasses for structured data
 
